@@ -230,7 +230,7 @@ services:
 
   peer1.marketplace.blockfarm.com:
     container_name: peer1.marketplace.blockfarm.com
-    image: hyperledger/fabric-peer:2.3.2
+    image: hyperledger/fabric-peer:2.5.4
     labels:
       service: hyperledger-fabric
     environment:
@@ -278,7 +278,7 @@ services:
 
   peer2.marketplace.blockfarm.com:
     container_name: peer2.marketplace.blockfarm.com
-    image: hyperledger/fabric-peer:2.3.2
+    image: hyperledger/fabric-peer:2.5.4
     labels:
       service: hyperledger-fabric
     environment:
@@ -326,7 +326,7 @@ services:
 
   peer1.mapa.blockfarm.com:
     container_name: peer1.mapa.blockfarm.com
-    image: hyperledger/fabric-peer:2.3.2
+    image: hyperledger/fabric-peer:2.5.4
     labels:
       service: hyperledger-fabric
     environment:
@@ -374,7 +374,7 @@ services:
 
   peer2.mapa.blockfarm.com:
     container_name: peer2.mapa.blockfarm.com
-    image: hyperledger/fabric-peer:2.3.2
+    image: hyperledger/fabric-peer:2.5.4
     labels:
       service: hyperledger-fabric
     environment:
