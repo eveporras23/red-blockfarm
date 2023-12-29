@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-version: '1.0'
+version: "1.0"
 
 volumes:
   orderer1.blockfarm.com:
@@ -19,11 +19,10 @@ networks:
     name: fabric_blockfarm
 
 services:
-
-// configuración para los orderer 
+  # configuración para los orderer
 
   orderer1.blockfarm.com:
-    container_name:  orderer1.blockfarm.com
+    container_name: orderer1.blockfarm.com
     image: hyperledger/fabric-orderer:2.5.4
     labels:
       service: hyperledger-fabric
@@ -55,10 +54,10 @@ services:
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric
     command: orderer
     volumes:
-        - ../system-genesis-block/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
-        - ../organizations/ordererOrganizations/blockfarm.com/orderers/orderer1.blockfarm.com/msp:/var/hyperledger/orderer/msp
-        - ../organizations/ordererOrganizations/blockfarm.com/orderers/orderer1.blockfarm.com/tls/:/var/hyperledger/orderer/tls
-        - orderer1.blockfarm.com:/var/hyperledger/production/orderer
+      - ../system-genesis-block/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
+      - ../organizations/ordererOrganizations/blockfarm.com/orderers/orderer1.blockfarm.com/msp:/var/hyperledger/orderer/msp
+      - ../organizations/ordererOrganizations/blockfarm.com/orderers/orderer1.blockfarm.com/tls/:/var/hyperledger/orderer/tls
+      - orderer1.blockfarm.com:/var/hyperledger/production/orderer
     ports:
       - 7050:7050
       - 7053:7053
@@ -67,7 +66,7 @@ services:
       - blockfarm
 
   orderer2.blockfarm.com:
-    container_name:  orderer2.blockfarm.com
+    container_name: orderer2.blockfarm.com
     image: hyperledger/fabric-orderer:2.5.4
     labels:
       service: hyperledger-fabric
@@ -99,10 +98,10 @@ services:
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric
     command: orderer
     volumes:
-        - ../system-genesis-block/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
-        - ../organizations/ordererOrganizations/blockfarm.com/orderers/orderer2.blockfarm.com/msp:/var/hyperledger/orderer/msp
-        - ../organizations/ordererOrganizations/blockfarm.com/orderers/orderer2.blockfarm.com/tls/:/var/hyperledger/orderer/tls
-        - orderer2.blockfarm.com:/var/hyperledger/production/orderer
+      - ../system-genesis-block/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
+      - ../organizations/ordererOrganizations/blockfarm.com/orderers/orderer2.blockfarm.com/msp:/var/hyperledger/orderer/msp
+      - ../organizations/ordererOrganizations/blockfarm.com/orderers/orderer2.blockfarm.com/tls/:/var/hyperledger/orderer/tls
+      - orderer2.blockfarm.com:/var/hyperledger/production/orderer
     ports:
       - 6050:6050
       - 7043:7043
@@ -111,7 +110,7 @@ services:
       - blockfarm
 
   orderer3.blockfarm.com:
-    container_name:  orderer3.blockfarm.com
+    container_name: orderer3.blockfarm.com
     image: hyperledger/fabric-orderer:2.5.4
     labels:
       service: hyperledger-fabric
@@ -143,10 +142,10 @@ services:
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric
     command: orderer
     volumes:
-        - ../system-genesis-block/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
-        - ../organizations/ordererOrganizations/blockfarm.com/orderers/orderer3.blockfarm.com/msp:/var/hyperledger/orderer/msp
-        - ../organizations/ordererOrganizations/blockfarm.com/orderers/orderer3.blockfarm.com/tls/:/var/hyperledger/orderer/tls
-        - orderer3.blockfarm.com:/var/hyperledger/production/orderer
+      - ../system-genesis-block/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
+      - ../organizations/ordererOrganizations/blockfarm.com/orderers/orderer3.blockfarm.com/msp:/var/hyperledger/orderer/msp
+      - ../organizations/ordererOrganizations/blockfarm.com/orderers/orderer3.blockfarm.com/tls/:/var/hyperledger/orderer/tls
+      - orderer3.blockfarm.com:/var/hyperledger/production/orderer
     ports:
       - 5050:5050
       - 7033:7033
@@ -154,9 +153,8 @@ services:
     networks:
       - blockfarm
 
-
-// configuración de los couchdb para las 2 organizaciones, 1 en cada peer.
-// En total son 4 
+  # configuración de los couchdb para las 2 organizaciones, 1 en cada peer.
+  # En total son 4
 
   couchdb.peer1.marketplace:
     container_name: couchdb.peer1.marketplace
@@ -225,8 +223,8 @@ services:
       - "8984:5984"
     networks:
       - blockfarm
- 
-// configuración de los peers 
+
+  # configuración de los peers
 
   peer1.marketplace.blockfarm.com:
     container_name: peer1.marketplace.blockfarm.com
@@ -262,10 +260,10 @@ services:
       - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=admin
       - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=adminpw
     volumes:
-        - /var/run/docker.sock:/host/var/run/docker.sock
-        - ../organizations/peerOrganizations/marketplace.blockfarm.com/peers/peer1.marketplace.blockfarm.com/msp:/etc/hyperledger/fabric/msp
-        - ../organizations/peerOrganizations/marketplace.blockfarm.com/peers/peer1.marketplace.blockfarm.com/tls:/etc/hyperledger/fabric/tls
-        - peer1.marketplace.blockfarm.com:/var/hyperledger/production
+      - /var/run/docker.sock:/host/var/run/docker.sock
+      - ../organizations/peerOrganizations/marketplace.blockfarm.com/peers/peer1.marketplace.blockfarm.com/msp:/etc/hyperledger/fabric/msp
+      - ../organizations/peerOrganizations/marketplace.blockfarm.com/peers/peer1.marketplace.blockfarm.com/tls:/etc/hyperledger/fabric/tls
+      - peer1.marketplace.blockfarm.com:/var/hyperledger/production
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
     command: peer node start
     ports:
@@ -310,10 +308,10 @@ services:
       - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=admin
       - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=adminpw
     volumes:
-        - /var/run/docker.sock:/host/var/run/docker.sock
-        - ../organizations/peerOrganizations/marketplace.blockfarm.com/peers/peer2.marketplace.blockfarm.com/msp:/etc/hyperledger/fabric/msp
-        - ../organizations/peerOrganizations/marketplace.blockfarm.com/peers/peer2.marketplace.blockfarm.com/tls:/etc/hyperledger/fabric/tls
-        - peer2.marketplace.blockfarm.com:/var/hyperledger/production
+      - /var/run/docker.sock:/host/var/run/docker.sock
+      - ../organizations/peerOrganizations/marketplace.blockfarm.com/peers/peer2.marketplace.blockfarm.com/msp:/etc/hyperledger/fabric/msp
+      - ../organizations/peerOrganizations/marketplace.blockfarm.com/peers/peer2.marketplace.blockfarm.com/tls:/etc/hyperledger/fabric/tls
+      - peer2.marketplace.blockfarm.com:/var/hyperledger/production
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
     command: peer node start
     ports:
@@ -358,10 +356,10 @@ services:
       - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=admin
       - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=adminpw
     volumes:
-        - /var/run/docker.sock:/host/var/run/docker.sock
-        - ../organizations/peerOrganizations/mapa.blockfarm.com/peers/peer1.mapa.blockfarm.com/msp:/etc/hyperledger/fabric/msp
-        - ../organizations/peerOrganizations/mapa.blockfarm.com/peers/peer1.mapa.blockfarm.com/tls:/etc/hyperledger/fabric/tls
-        - peer1.mapa.blockfarm.com:/var/hyperledger/production
+      - /var/run/docker.sock:/host/var/run/docker.sock
+      - ../organizations/peerOrganizations/mapa.blockfarm.com/peers/peer1.mapa.blockfarm.com/msp:/etc/hyperledger/fabric/msp
+      - ../organizations/peerOrganizations/mapa.blockfarm.com/peers/peer1.mapa.blockfarm.com/tls:/etc/hyperledger/fabric/tls
+      - peer1.mapa.blockfarm.com:/var/hyperledger/production
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
     command: peer node start
     ports:
@@ -406,10 +404,10 @@ services:
       - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=admin
       - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=adminpw
     volumes:
-        - /var/run/docker.sock:/host/var/run/docker.sock
-        - ../organizations/peerOrganizations/mapa.blockfarm.com/peers/peer2.mapa.blockfarm.com/msp:/etc/hyperledger/fabric/msp
-        - ../organizations/peerOrganizations/mapa.blockfarm.com/peers/peer2.mapa.blockfarm.com/tls:/etc/hyperledger/fabric/tls
-        - peer2.mapa.blockfarm.com:/var/hyperledger/production
+      - /var/run/docker.sock:/host/var/run/docker.sock
+      - ../organizations/peerOrganizations/mapa.blockfarm.com/peers/peer2.mapa.blockfarm.com/msp:/etc/hyperledger/fabric/msp
+      - ../organizations/peerOrganizations/mapa.blockfarm.com/peers/peer2.mapa.blockfarm.com/tls:/etc/hyperledger/fabric/tls
+      - peer2.mapa.blockfarm.com:/var/hyperledger/production
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
     command: peer node start
     ports:
@@ -420,8 +418,7 @@ services:
     depends_on:
       - couchdb.peer2.mapa
 
-
-// configuración de los CA (autoridad de certificación)
+  # configuración de los CA (autoridad de certificación)
 
   ca_marketplace:
     image: hyperledger/fabric-ca:1.5.7
@@ -484,8 +481,7 @@ services:
     networks:
       - blockfarm
 
-
-// CLI 
+  # CLI
 
   cli:
     container_name: cli
@@ -502,8 +498,8 @@ services:
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
     command: /bin/bash
     volumes:
-        - /var/run/:/host/var/run/
-        - ../organizations:/opt/gopath/src/github.com/hyperledger/fabric/peer/organizations
+      - /var/run/:/host/var/run/
+      - ../organizations:/opt/gopath/src/github.com/hyperledger/fabric/peer/organizations
     depends_on:
       - peer1.marketplace.blockfarm.com
       - peer2.marketplace.blockfarm.com
