@@ -160,7 +160,7 @@ services:
 
   couchdb.peer1.marketplace:
     container_name: couchdb.peer1.marketplace
-    image: couchdb:3.1.1
+    image: couchdb:latest
     labels:
       service: hyperledger-fabric
     # Populate the COUCHDB_USER and COUCHDB_PASSWORD to set an admin user and password
@@ -177,7 +177,7 @@ services:
 
   couchdb.peer2.marketplace:
     container_name: couchdb.peer2.marketplace
-    image: couchdb:3.1.1
+    image: couchdb:latest
     labels:
       service: hyperledger-fabric
     # Populate the COUCHDB_USER and COUCHDB_PASSWORD to set an admin user and password
@@ -194,7 +194,7 @@ services:
 
   couchdb.peer1.mapa:
     container_name: couchdb.peer1.mapa
-    image: couchdb:3.1.1
+    image: couchdb:latest
     labels:
       service: hyperledger-fabric
     # Populate the COUCHDB_USER and COUCHDB_PASSWORD to set an admin user and password
@@ -211,7 +211,7 @@ services:
 
   couchdb.peer2.mapa:
     container_name: couchdb.peer2.mapa
-    image: couchdb:3.1.1
+    image: couchdb:latest
     labels:
       service: hyperledger-fabric
     # Populate the COUCHDB_USER and COUCHDB_PASSWORD to set an admin user and password
