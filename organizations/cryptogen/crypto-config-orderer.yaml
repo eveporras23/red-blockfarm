@@ -11,14 +11,18 @@ OrdererOrgs:
   # Orderer
   # ---------------------------------------------------------------------------
   - Name: Orderer
-    Domain: example.com
+    Domain: blockfarm.com
     EnableNodeOUs: true
     # ---------------------------------------------------------------------------
     # "Specs" - See PeerOrgs for complete description
     # ---------------------------------------------------------------------------
     Specs:
-      - Hostname: orderer
+      - Hostname: orderer1
         SANS:
           - localhost
-          - peer0.org2
-          - 10.132.0.5
+      - Hostname: orderer2
+        SANS:
+          - localhost
+      - Hostname: orderer3
+        SANS:
+          - localhost
