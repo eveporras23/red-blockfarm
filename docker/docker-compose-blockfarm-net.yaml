@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-version: '2.4'
+version: '1.0'
 
 volumes:
   orderer1.blockfarm.com:
@@ -24,7 +24,7 @@ services:
 
   orderer1.blockfarm.com:
     container_name:  orderer1.blockfarm.com
-    image: hyperledger/fabric-orderer:2.3.2
+    image: hyperledger/fabric-orderer:2.5.4
     labels:
       service: hyperledger-fabric
     environment:
@@ -68,13 +68,13 @@ services:
 
   orderer2.blockfarm.com:
     container_name:  orderer2.blockfarm.com
-    image: hyperledger/fabric-orderer:2.3.2
+    image: hyperledger/fabric-orderer:2.5.4
     labels:
       service: hyperledger-fabric
     environment:
       - FABRIC_LOGGING_SPEC=INFO
       - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
-      - ORDERER_GENERAL_LISTENPORT=7051
+      - ORDERER_GENERAL_LISTENPORT=6050
       - ORDERER_GENERAL_LOCALMSPID=OrdererMSP
       - ORDERER_GENERAL_LOCALMSPDIR=/var/hyperledger/orderer/msp
       # enabled TLS
@@ -94,8 +94,8 @@ services:
       - ORDERER_ADMIN_TLS_PRIVATEKEY=/var/hyperledger/orderer/tls/server.key
       - ORDERER_ADMIN_TLS_ROOTCAS=[/var/hyperledger/orderer/tls/ca.crt]
       - ORDERER_ADMIN_TLS_CLIENTROOTCAS=[/var/hyperledger/orderer/tls/ca.crt]
-      - ORDERER_ADMIN_LISTENADDRESS=0.0.0.0:7054
-      - ORDERER_OPERATIONS_LISTENADDRESS=0.0.0.0:17051
+      - ORDERER_ADMIN_LISTENADDRESS=0.0.0.0:7043
+      - ORDERER_OPERATIONS_LISTENADDRESS=0.0.0.0:17043
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric
     command: orderer
     volumes:
@@ -104,21 +104,21 @@ services:
         - ../organizations/ordererOrganizations/blockfarm.com/orderers/orderer2.blockfarm.com/tls/:/var/hyperledger/orderer/tls
         - orderer2.blockfarm.com:/var/hyperledger/production/orderer
     ports:
-      - 7051:7051
-      - 7054:7054
-      - 17051:17051
+      - 6050:6050
+      - 7043:7043
+      - 17043:17043
     networks:
       - blockfarm
 
   orderer3.blockfarm.com:
     container_name:  orderer3.blockfarm.com
-    image: hyperledger/fabric-orderer:2.3.2
+    image: hyperledger/fabric-orderer:2.5.4
     labels:
       service: hyperledger-fabric
     environment:
       - FABRIC_LOGGING_SPEC=INFO
       - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
-      - ORDERER_GENERAL_LISTENPORT=7052
+      - ORDERER_GENERAL_LISTENPORT=5050
       - ORDERER_GENERAL_LOCALMSPID=OrdererMSP
       - ORDERER_GENERAL_LOCALMSPDIR=/var/hyperledger/orderer/msp
       # enabled TLS
@@ -138,8 +138,8 @@ services:
       - ORDERER_ADMIN_TLS_PRIVATEKEY=/var/hyperledger/orderer/tls/server.key
       - ORDERER_ADMIN_TLS_ROOTCAS=[/var/hyperledger/orderer/tls/ca.crt]
       - ORDERER_ADMIN_TLS_CLIENTROOTCAS=[/var/hyperledger/orderer/tls/ca.crt]
-      - ORDERER_ADMIN_LISTENADDRESS=0.0.0.0:7055
-      - ORDERER_OPERATIONS_LISTENADDRESS=0.0.0.0:17052
+      - ORDERER_ADMIN_LISTENADDRESS=0.0.0.0:7033
+      - ORDERER_OPERATIONS_LISTENADDRESS=0.0.0.0:17033
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric
     command: orderer
     volumes:
@@ -148,9 +148,9 @@ services:
         - ../organizations/ordererOrganizations/blockfarm.com/orderers/orderer3.blockfarm.com/tls/:/var/hyperledger/orderer/tls
         - orderer3.blockfarm.com:/var/hyperledger/production/orderer
     ports:
-      - 7052:7052
-      - 7055:7055
-      - 17052:17052
+      - 5050:5050
+      - 7033:7033
+      - 17033:17033
     networks:
       - blockfarm
 
