@@ -188,7 +188,7 @@ services:
     # Comment/Uncomment the port mapping if you want to hide/expose the CouchDB service,
     # for example map it to utilize Fauxton User Interface in dev environments.
     ports:
-      - "5985:5985"
+      - "6984:5984"
     networks:
       - blockfarm
 
@@ -205,7 +205,7 @@ services:
     # Comment/Uncomment the port mapping if you want to hide/expose the CouchDB service,
     # for example map it to utilize Fauxton User Interface in dev environments.
     ports:
-      - "5986:5986"
+      - "7984:5984"
     networks:
       - blockfarm
 
@@ -222,7 +222,7 @@ services:
     # Comment/Uncomment the port mapping if you want to hide/expose the CouchDB service,
     # for example map it to utilize Fauxton User Interface in dev environments.
     ports:
-      - "5987:5987"
+      - "8984:5984"
     networks:
       - blockfarm
  
