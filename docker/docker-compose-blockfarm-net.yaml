@@ -388,14 +388,14 @@ services:
       - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/tls/ca.crt
       # Peer specific variables
       - CORE_PEER_ID=peer2.mapa.blockfarm.com
-      - CORE_PEER_ADDRESS=peer2.mapa.blockfarm.com:7053
-      - CORE_PEER_LISTENADDRESS=0.0.0.0:7053
+      - CORE_PEER_ADDRESS=peer2.mapa.blockfarm.com:7054
+      - CORE_PEER_LISTENADDRESS=0.0.0.0:7054
       - CORE_PEER_CHAINCODEADDRESS=peer2.mapa.blockfarm.com:7054
-      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7053
+      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7054
       - CORE_PEER_GOSSIP_BOOTSTRAP=peer2.mapa.blockfarm.com:7052
       - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer2.mapa.blockfarm.com:7052
       - CORE_PEER_LOCALMSPID=Org2MSP
-      - CORE_OPERATIONS_LISTENADDRESS=0.0.0.0:17053
+      - CORE_OPERATIONS_LISTENADDRESS=0.0.0.0:17054
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb.peer2.mapa:5987
       # The CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME and CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD
@@ -428,11 +428,11 @@ services:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
       - FABRIC_CA_SERVER_CA_NAME=ca-marketplace
       - FABRIC_CA_SERVER_TLS_ENABLED=true
-      - FABRIC_CA_SERVER_PORT=7054
-      - FABRIC_CA_SERVER_OPERATIONS_LISTENADDRESS=0.0.0.0:17054
+      - FABRIC_CA_SERVER_PORT=7055
+      - FABRIC_CA_SERVER_OPERATIONS_LISTENADDRESS=0.0.0.0:17055
     ports:
-      - "7054:7054"
-      - "17054:17054"
+      - "7055:7055"
+      - "17055:17055"
     command: sh -c 'fabric-ca-server start -b admin:adminpw -d --cfg.affiliations.allowremove  --cfg.identities.allowremove'
 
     volumes:
