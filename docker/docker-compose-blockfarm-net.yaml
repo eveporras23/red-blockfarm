@@ -292,14 +292,14 @@ services:
       - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/tls/ca.crt
       # Peer specific variables
       - CORE_PEER_ID=peer2.marketplace.blockfarm.com
-      - CORE_PEER_ADDRESS=peer2.marketplace.blockfarm.com:7043
-      - CORE_PEER_LISTENADDRESS=0.0.0.0:7043
-      - CORE_PEER_CHAINCODEADDRESS=peer2.marketplace.blockfarm.com:7042
-      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7042
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer2.marketplace.blockfarm.com:7043
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer2.marketplace.blockfarm.com:7043
+      - CORE_PEER_ADDRESS=peer2.marketplace.blockfarm.com:7033
+      - CORE_PEER_LISTENADDRESS=0.0.0.0:7033
+      - CORE_PEER_CHAINCODEADDRESS=peer2.marketplace.blockfarm.com:7034
+      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7034
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer2.marketplace.blockfarm.com:7033
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer2.marketplace.blockfarm.com:7033
       - CORE_PEER_LOCALMSPID=Org1MSP
-      - CORE_OPERATIONS_LISTENADDRESS=0.0.0.0:17043
+      - CORE_OPERATIONS_LISTENADDRESS=0.0.0.0:17033
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb.peer2.marketplace:5985
       # The CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME and CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD
@@ -315,8 +315,8 @@ services:
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
     command: peer node start
     ports:
-      - 7043:7043
-      - 17043:17043
+      - 7033:7033
+      - 17033:17033
     networks:
       - blockfarm
     depends_on:
