@@ -340,14 +340,14 @@ services:
       - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/tls/ca.crt
       # Peer specific variables
       - CORE_PEER_ID=peer1.mapa.blockfarm.com
-      - CORE_PEER_ADDRESS=peer1.mapa.blockfarm.com:7053
-      - CORE_PEER_LISTENADDRESS=0.0.0.0:7053
-      - CORE_PEER_CHAINCODEADDRESS=peer1.mapa.blockfarm.com:7053
-      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7053
-      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.mapa.blockfarm.com:7053
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.mapa.blockfarm.com:7053
+      - CORE_PEER_ADDRESS=peer1.mapa.blockfarm.com:7055
+      - CORE_PEER_LISTENADDRESS=0.0.0.0:7055
+      - CORE_PEER_CHAINCODEADDRESS=peer1.mapa.blockfarm.com:7055
+      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7055
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.mapa.blockfarm.com:7055
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.mapa.blockfarm.com:7055
       - CORE_PEER_LOCALMSPID=Org2MSP
-      - CORE_OPERATIONS_LISTENADDRESS=0.0.0.0:17053
+      - CORE_OPERATIONS_LISTENADDRESS=0.0.0.0:17055
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb.peer1.mapa:5986
       # The CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME and CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD
@@ -363,8 +363,8 @@ services:
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
     command: peer node start
     ports:
-      - 7053:7053
-      - 17053:17053
+      - 7055:7055
+      - 17055:17055
     networks:
       - blockfarm
     depends_on:
