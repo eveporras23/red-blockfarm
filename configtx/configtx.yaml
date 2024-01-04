@@ -53,7 +53,7 @@ Organizations:
     # ID to load the MSP definition as
     ID: mapaMSP
 
-    MSPDir: ../organizations/peerOrganizations/mapa.example.com/msp
+    MSPDir: ../organizations/peerOrganizations/mapa.blockfarm.com/msp
 
     # Policies defines the set of policies at this level of the config tree
     # For organization policies, their canonical path is usually
@@ -80,7 +80,7 @@ Organizations:
     # ID to load the MSP definition as
     ID: marketplaceMSP
 
-    MSPDir: ../organizations/peerOrganizations/org2.example.com/msp
+    MSPDir: ../organizations/peerOrganizations/marketplace.blockfarm.com/msp
 
     # Policies defines the set of policies at this level of the config tree
     # For organization policies, their canonical path is usually
