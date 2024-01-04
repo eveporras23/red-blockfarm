@@ -330,7 +330,7 @@ Profiles:
       Capabilities:
         <<: *OrdererCapabilities
     Consortiums:
-      SampleConsortium:
+      BlockfarmConsortium:
         Organizations:
           - *mapaOrg
           - *marketplaceOrg
