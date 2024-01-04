@@ -314,6 +314,7 @@ Channel: &ChannelDefaults
 ################################################################################
 Profiles:
   TwoOrgsBlockFarmGenesis:
+    Consortium: BlockfarmConsortium
     <<: *ChannelDefaults
     Orderer:
       <<: *OrdererDefaults
