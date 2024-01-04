@@ -321,21 +321,20 @@ Channel: &ChannelDefaults
 #
 ################################################################################
 Profiles:
-    TwoOrgOrdererGenesis:
-        Orderer:
-            <<: *OrdererDefaults
-            Organizations:
-                - *OrdererBlockFarmMSPOrg
-        Consortiums:
-            BlockfarmConsortium:
-                Organizations:
-                    - *mapaOrg
-                    - *marketplaceOrg
-    TwoOrgBlockfarmChannel:
-        Consortium: BlockfarmConsortium
-        Application:
-            <<: *ApplicationDefaults
-            Organizations:
-                - *mapaOrg
-                - *marketplaceOrg
-
+  TwoOrgOrdererGenesis:
+    Orderer:
+      <<: *OrdererDefaults
+      Organizations:
+        - *OrdererBlockFarmOrg
+    Consortiums:
+      BlockfarmConsortium:
+        Organizations:
+          - *mapaOrg
+          - *marketplaceOrg
+  TwoOrgBlockfarmChannel:
+    Consortium: BlockfarmConsortium
+    Application:
+      <<: *ApplicationDefaults
+      Organizations:
+        - *mapaOrg
+        - *marketplaceOrg
