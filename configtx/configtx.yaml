@@ -325,7 +325,7 @@ Profiles:
         Orderer:
             <<: *OrdererDefaults
             Organizations:
-                - *OrdererOrg
+                - *OrdererBlockFarmMSPOrg
         Consortiums:
             BlockfarmConsortium:
                 Organizations:
