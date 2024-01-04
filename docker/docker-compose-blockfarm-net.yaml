@@ -436,7 +436,7 @@ services:
     command: sh -c 'fabric-ca-server start -b admin:adminpw -d --cfg.affiliations.allowremove  --cfg.identities.allowremove'
 
     volumes:
-      - ../organizations/fabric-ca/marketplace:/etc/hyperledger/fabric-ca-server
+      - ../organizations/fabric-ca/marketplaceOrg:/etc/hyperledger/fabric-ca-server
     container_name: ca_marketplace
     networks:
       - blockfarm
@@ -456,7 +456,7 @@ services:
       - "18054:18054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw -d --cfg.affiliations.allowremove  --cfg.identities.allowremove'
     volumes:
-      - ../organizations/fabric-ca/mapa:/etc/hyperledger/fabric-ca-server
+      - ../organizations/fabric-ca/mapaOrg:/etc/hyperledger/fabric-ca-server
     container_name: ca_mapa
     networks:
       - blockfarm
