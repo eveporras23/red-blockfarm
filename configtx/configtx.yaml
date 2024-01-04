@@ -55,6 +55,10 @@ Organizations:
 
     MSPDir: ../organizations/peerOrganizations/mapa.blockfarm.com/msp
 
+    AnchorPeers:
+      - Host: peer1.marketplace.blockfarm.com
+        Port: 7051
+
     # Policies defines the set of policies at this level of the config tree
     # For organization policies, their canonical path is usually
     #   /Channel/<Application|Orderer>/<OrgName>/<PolicyName>
@@ -81,6 +85,10 @@ Organizations:
     ID: marketplaceMSP
 
     MSPDir: ../organizations/peerOrganizations/marketplace.blockfarm.com/msp
+
+    AnchorPeers:
+      - Host: peer1.mapa.blockfarm.com
+        Port: 7051
 
     # Policies defines the set of policies at this level of the config tree
     # For organization policies, their canonical path is usually
