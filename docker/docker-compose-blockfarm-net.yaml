@@ -476,7 +476,7 @@ services:
       - "19054:19054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw -d --cfg.affiliations.allowremove  --cfg.identities.allowremove'
     volumes:
-      - ../organizations/fabric-ca/ordererOrg:/etc/hyperledger/fabric-ca-server
+      - ../organizations/fabric-ca/OrdererBlockFarmOrg:/etc/hyperledger/fabric-ca-server
     container_name: ca_orderer
     networks:
       - blockfarm
