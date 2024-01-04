@@ -45,7 +45,7 @@ Organizations:
       - orderer2.blockfarm.com:6050
       - orderer3.blockfarm.com:5050
 
-  - &mapa-Org
+  - &mapaOrg
     # DefaultOrg defines the organization which is used in the sampleconfig
     # of the fabric.git development environment
     Name: mapaMSP
@@ -72,7 +72,7 @@ Organizations:
         Type: Signature
         Rule: "OR('mapaMSP.peer')"
 
-  - &Org2
+  - &marketplaceOrg
     # DefaultOrg defines the organization which is used in the sampleconfig
     # of the fabric.git development environment
     Name: marketplaceMSP
@@ -99,7 +99,6 @@ Organizations:
         Type: Signature
         Rule: "OR('marketplaceMSP.peer')"
 
- 
 ################################################################################
 #
 #   SECTION: Capabilities
@@ -225,7 +224,7 @@ Orderer: &OrdererDefaults # Orderer Type: The orderer implementation to start
         Port: 5050
         ClientTLSCert: ../organizations/ordererOrganizations/blockfarm.com/orderers/orderer3.blockfarm.com/tls/server.crt
         ServerTLSCert: ../organizations/ordererOrganizations/blockfarm.com/orderers/orderer3.blockfarm.com/tls/server.key
-      
+
     Options:
       TickInterval: 2500ms
       ElectionTick: 5
@@ -353,4 +352,3 @@ Profiles:
       Organizations:
         - *marketplaceOrg
       Capabilities: *ApplicationCapabilities
-
