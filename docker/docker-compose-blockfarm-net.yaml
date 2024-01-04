@@ -263,7 +263,7 @@ services:
       - /var/run/docker.sock:/host/var/run/docker.sock
       - ../organizations/peerOrganizations/marketplace.blockfarm.com/peers/peer0.marketplace.blockfarm.com/msp:/etc/hyperledger/fabric/msp
       - ../organizations/peerOrganizations/marketplace.blockfarm.com/peers/peer0.marketplace.blockfarm.com/tls:/etc/hyperledger/fabric/tls
-      - peer0.marketplace.blockfarm.com:/var/hyperledger/production
+      - peer1.marketplace.blockfarm.com:/var/hyperledger/production
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
     command: peer node start
     ports:
@@ -311,7 +311,7 @@ services:
       - /var/run/docker.sock:/host/var/run/docker.sock
       - ../organizations/peerOrganizations/marketplace.blockfarm.com/peers/peer0.marketplace.blockfarm.com/msp:/etc/hyperledger/fabric/msp
       - ../organizations/peerOrganizations/marketplace.blockfarm.com/peers/peer0.marketplace.blockfarm.com/tls:/etc/hyperledger/fabric/tls
-      - peer0.marketplace.blockfarm.com:/var/hyperledger/production
+      - peer2.marketplace.blockfarm.com:/var/hyperledger/production
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
     command: peer node start
     ports:
@@ -359,7 +359,7 @@ services:
       - /var/run/docker.sock:/host/var/run/docker.sock
       - ../organizations/peerOrganizations/mapa.blockfarm.com/peers/peer0.mapa.blockfarm.com/msp:/etc/hyperledger/fabric/msp
       - ../organizations/peerOrganizations/mapa.blockfarm.com/peers/peer0.mapa.blockfarm.com/tls:/etc/hyperledger/fabric/tls
-      - peer0.mapa.blockfarm.com:/var/hyperledger/production
+      - peer1.mapa.blockfarm.com:/var/hyperledger/production
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
     command: peer node start
     ports:
@@ -407,7 +407,7 @@ services:
       - /var/run/docker.sock:/host/var/run/docker.sock
       - ../organizations/peerOrganizations/mapa.blockfarm.com/peers/peer0.mapa.blockfarm.com/msp:/etc/hyperledger/fabric/msp
       - ../organizations/peerOrganizations/mapa.blockfarm.com/peers/peer0.mapa.blockfarm.com/tls:/etc/hyperledger/fabric/tls
-      - peer0.mapa.blockfarm.com:/var/hyperledger/production
+      - peer2.mapa.blockfarm.com:/var/hyperledger/production
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
     command: peer node start
     ports:
