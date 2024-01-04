@@ -321,6 +321,19 @@ Channel: &ChannelDefaults
 #
 ################################################################################
 Profiles:
+  TwoOrgOrdererGenesis:
+    <<: *ChannelDefaults
+    Orderer:
+      <<: *OrdererDefaults
+      Organizations:
+        - *OrdererBlockFarmOrg
+      Capabilities:
+        <<: *OrdererCapabilities
+    Consortiums:
+      SampleConsortium:
+        Organizations:
+          - *mapaOrg
+          - *marketplaceOrg
   TwoOrgBlockfarmGenesis:
     Consortium: BlockfarmConsortium
     <<: *ChannelDefaults
