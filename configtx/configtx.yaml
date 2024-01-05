@@ -223,15 +223,15 @@ Orderer: &OrdererDefaults # Orderer Type: The orderer implementation to start
       - Host: orderer1.blockfarm.com
         Port: 7050
         ClientTLSCert: ../organizations/ordererOrganizations/blockfarm.com/orderers/orderer1.blockfarm.com/tls/server.crt
-        ServerTLSCert: ../organizations/ordererOrganizations/blockfarm.com/orderers/orderer1.blockfarm.com/tls/server.key
+        ServerTLSCert: ../organizations/ordererOrganizations/blockfarm.com/orderers/orderer1.blockfarm.com/tls/server.crt
       - Host: orderer2.blockfarm.com
         Port: 6050
         ClientTLSCert: ../organizations/ordererOrganizations/blockfarm.com/orderers/orderer2.blockfarm.com/tls/server.crt
-        ServerTLSCert: ../organizations/ordererOrganizations/blockfarm.com/orderers/orderer2.blockfarm.com/tls/server.key
+        ServerTLSCert: ../organizations/ordererOrganizations/blockfarm.com/orderers/orderer2.blockfarm.com/tls/server.crt
       - Host: orderer3.blockfarm.com
         Port: 5050
         ClientTLSCert: ../organizations/ordererOrganizations/blockfarm.com/orderers/orderer3.blockfarm.com/tls/server.crt
-        ServerTLSCert: ../organizations/ordererOrganizations/blockfarm.com/orderers/orderer3.blockfarm.com/tls/server.key
+        ServerTLSCert: ../organizations/ordererOrganizations/blockfarm.com/orderers/orderer3.blockfarm.com/tls/server.crt
 
     Options:
       TickInterval: 2500ms
