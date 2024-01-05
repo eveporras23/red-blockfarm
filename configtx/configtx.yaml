@@ -335,16 +335,29 @@ Profiles:
         - *mapaOrg
         - *marketplaceOrg
       Capabilities: *ApplicationCapabilities
-  TwoOrgOrdererGenesis:
+  mapaOrgGenesis:
+    Consortium: mapaConsortium
     <<: *ChannelDefaults
     Orderer:
       <<: *OrdererDefaults
       Organizations:
         - *OrdererBlockFarmOrg
-      Capabilities:
-        <<: *OrdererCapabilities
-    Consortiums:
-      BlockfarmConsortium:
-        Organizations:
-          - *mapaOrg
-          - *marketplaceOrg
+      Capabilities: *OrdererCapabilities
+    Application:
+      <<: *ApplicationDefaults
+      Organizations:
+        - *marketplaceOrg
+      Capabilities: *ApplicationCapabilities
+  marketplaceOrgGenesis:
+    Consortium: marketplaceConsortium
+    <<: *ChannelDefaults
+    Orderer:
+      <<: *OrdererDefaults
+      Organizations:
+        - *OrdererBlockFarmOrg
+      Capabilities: *OrdererCapabilities
+    Application:
+      <<: *ApplicationDefaults
+      Organizations:
+        - *marketplaceOrg
+      Capabilities: *ApplicationCapabilities
