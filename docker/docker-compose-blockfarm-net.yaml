@@ -244,7 +244,6 @@ services:
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7052
       - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.marketplace.blockfarm.com:7051
       - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.marketplace.blockfarm.com:7051
-      - CORE_PEER_LOCALMSPID=marketplaceMSP
       - CORE_OPERATIONS_LISTENADDRESS=0.0.0.0:17051
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb.peer1.marketplace:5984
@@ -253,6 +252,11 @@ services:
       # match the username and password set for the associated CouchDB.
       - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=admin
       - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=adminpw
+
+      # MSP CONGIG
+      - CORE_PEER_LOCALMSPID=marketplaceMSP
+      - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/fabric/msp
+
     volumes:
       - /var/run/docker.sock:/host/var/run/docker.sock
       - ../organizations/peerOrganizations/marketplace.blockfarm.com/peers/peer0.marketplace.blockfarm.com/msp:/etc/hyperledger/fabric/msp
@@ -292,7 +296,6 @@ services:
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:6052
       - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.marketplace.blockfarm.com:6051
       - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.marketplace.blockfarm.com:6051
-      - CORE_PEER_LOCALMSPID=marketplaceMSP
       - CORE_OPERATIONS_LISTENADDRESS=0.0.0.0:16051
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb.peer2.marketplace:5984
@@ -301,6 +304,10 @@ services:
       # match the username and password set for the associated CouchDB.
       - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=admin
       - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=adminpw
+      # MSP CONGIG
+      - CORE_PEER_LOCALMSPID=marketplaceMSP
+      - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/fabric/msp
+
     volumes:
       - /var/run/docker.sock:/host/var/run/docker.sock
       - ../organizations/peerOrganizations/marketplace.blockfarm.com/peers/peer0.marketplace.blockfarm.com/msp:/etc/hyperledger/fabric/msp
@@ -349,6 +356,11 @@ services:
       # match the username and password set for the associated CouchDB.
       - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=admin
       - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=adminpw
+
+      # MSP CONGIG
+      - CORE_PEER_LOCALMSPID=mapaMSP
+      - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/fabric/msp
+
     volumes:
       - /var/run/docker.sock:/host/var/run/docker.sock
       - ../organizations/peerOrganizations/mapa.blockfarm.com/peers/peer0.mapa.blockfarm.com/msp:/etc/hyperledger/fabric/msp
@@ -397,6 +409,11 @@ services:
       # match the username and password set for the associated CouchDB.
       - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=admin
       - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=adminpw
+
+      # MSP CONGIG
+      - CORE_PEER_LOCALMSPID=mapaMSP
+      - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/fabric/msp
+
     volumes:
       - /var/run/docker.sock:/host/var/run/docker.sock
       - ../organizations/peerOrganizations/mapa.blockfarm.com/peers/peer0.mapa.blockfarm.com/msp:/etc/hyperledger/fabric/msp
