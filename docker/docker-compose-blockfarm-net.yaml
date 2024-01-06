@@ -52,7 +52,7 @@ services:
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric
     command: orderer
     volumes:
-      - ../system-genesis-block/genesis.block:/var/hyperledger/orderer/orderer1.genesis.block
+      - ../system-genesis-block/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
       - ../organizations/ordererOrganizations/blockfarm.com/orderers/orderer1.blockfarm.com/msp:/var/hyperledger/orderer/msp
       - ../organizations/ordererOrganizations/blockfarm.com/orderers/orderer1.blockfarm.com/tls/:/var/hyperledger/orderer/tls
       - orderer1.blockfarm.com:/var/hyperledger/production/orderer
@@ -94,7 +94,7 @@ services:
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric
     command: orderer
     volumes:
-      - ../system-genesis-block/genesis.block:/var/hyperledger/orderer/orderer2.genesis.block
+      - ../system-genesis-block/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
       - ../organizations/ordererOrganizations/blockfarm.com/orderers/orderer2.blockfarm.com/msp:/var/hyperledger/orderer/msp
       - ../organizations/ordererOrganizations/blockfarm.com/orderers/orderer2.blockfarm.com/tls/:/var/hyperledger/orderer/tls
       - orderer2.blockfarm.com:/var/hyperledger/production/orderer
@@ -136,7 +136,7 @@ services:
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric
     command: orderer
     volumes:
-      - ../system-genesis-block/genesis.block:/var/hyperledger/orderer/orderer3.genesis.block
+      - ../system-genesis-block/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
       - ../organizations/ordererOrganizations/blockfarm.com/orderers/orderer3.blockfarm.com/msp:/var/hyperledger/orderer/msp
       - ../organizations/ordererOrganizations/blockfarm.com/orderers/orderer3.blockfarm.com/tls/:/var/hyperledger/orderer/tls
       - orderer3.blockfarm.com:/var/hyperledger/production/orderer
