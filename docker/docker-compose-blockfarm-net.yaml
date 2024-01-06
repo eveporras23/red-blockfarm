@@ -238,7 +238,7 @@ services:
       - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/tls/ca.crt
       # Peer specific variables
       - CORE_PEER_ID=peer0.marketplace.blockfarm.com
-      - CORE_PEER_ADDRESS=localhost:7051
+      - CORE_PEER_ADDRESS=peer0.marketplace.blockfarm.com:7051
       - CORE_PEER_LISTENADDRESS=0.0.0.0:7051
       - CORE_PEER_CHAINCODEADDRESS=peer0.marketplace.blockfarm.com:7052
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7052
@@ -255,11 +255,10 @@ services:
 
       # MSP CONGIG
       - CORE_PEER_LOCALMSPID=marketplaceMSP
-      - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/fabric/user
+      - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/fabric/msp
 
     volumes:
       - /var/run/docker.sock:/host/var/run/docker.sock
-      - ../organizations/peerOrganizations/marketplace.blockfarm.com/users/Admin@marketplace.blockfarm.com/msp:/etc/hyperledger/fabric/user
       - ../organizations/peerOrganizations/marketplace.blockfarm.com/peers/peer0.marketplace.blockfarm.com/msp:/etc/hyperledger/fabric/msp
       - ../organizations/peerOrganizations/marketplace.blockfarm.com/peers/peer0.marketplace.blockfarm.com/tls:/etc/hyperledger/fabric/tls
       - peer1.marketplace.blockfarm.com:/var/hyperledger/production
@@ -291,7 +290,7 @@ services:
       - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/tls/ca.crt
       # Peer specific variables
       - CORE_PEER_ID=peer0.marketplace.blockfarm.com
-      - CORE_PEER_ADDRESS=localhost:6051
+      - CORE_PEER_ADDRESS=peer0.marketplace.blockfarm.com:6051
       - CORE_PEER_LISTENADDRESS=0.0.0.0:6051
       - CORE_PEER_CHAINCODEADDRESS=peer0.marketplace.blockfarm.com:6052
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:6052
@@ -307,11 +306,10 @@ services:
       - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=adminpw
       # MSP CONGIG
       - CORE_PEER_LOCALMSPID=marketplaceMSP
-      - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/fabric/user
+      - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/fabric/msp
 
     volumes:
       - /var/run/docker.sock:/host/var/run/docker.sock
-      - ../organizations/peerOrganizations/marketplace.blockfarm.com/users/Admin@marketplace.blockfarm.com/msp:/etc/hyperledger/fabric/user
       - ../organizations/peerOrganizations/marketplace.blockfarm.com/peers/peer0.marketplace.blockfarm.com/msp:/etc/hyperledger/fabric/msp
       - ../organizations/peerOrganizations/marketplace.blockfarm.com/peers/peer0.marketplace.blockfarm.com/tls:/etc/hyperledger/fabric/tls
       - peer2.marketplace.blockfarm.com:/var/hyperledger/production
@@ -343,7 +341,7 @@ services:
       - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/tls/ca.crt
       # Peer specific variables
       - CORE_PEER_ID=peer0.mapa.blockfarm.com
-      - CORE_PEER_ADDRESS=localhost:5051
+      - CORE_PEER_ADDRESS=peer0.mapa.blockfarm.com:5051
       - CORE_PEER_LISTENADDRESS=0.0.0.0:5051
       - CORE_PEER_CHAINCODEADDRESS=peer0.mapa.blockfarm.com:5052
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:5052
@@ -360,11 +358,10 @@ services:
 
       # MSP CONGIG
       - CORE_PEER_LOCALMSPID=mapaMSP
-      - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/fabric/user
+      - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/fabric/msp
 
     volumes:
       - /var/run/docker.sock:/host/var/run/docker.sock
-      - ../organizations/peerOrganizations/mapa.blockfarm.com/users/Admin@mapa.blockfarm.com/msp:/etc/hyperledger/fabric/user
       - ../organizations/peerOrganizations/mapa.blockfarm.com/peers/peer0.mapa.blockfarm.com/msp:/etc/hyperledger/fabric/msp
       - ../organizations/peerOrganizations/mapa.blockfarm.com/peers/peer0.mapa.blockfarm.com/tls:/etc/hyperledger/fabric/tls
       - peer1.mapa.blockfarm.com:/var/hyperledger/production
@@ -396,7 +393,7 @@ services:
       - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/tls/ca.crt
       # Peer specific variables
       - CORE_PEER_ID=peer0.mapa.blockfarm.com
-      - CORE_PEER_ADDRESS=localhost:4051
+      - CORE_PEER_ADDRESS=peer0.mapa.blockfarm.com:4051
       - CORE_PEER_LISTENADDRESS=0.0.0.0:4051
       - CORE_PEER_CHAINCODEADDRESS=peer0.mapa.blockfarm.com:4052
       - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:4052
@@ -413,11 +410,10 @@ services:
 
       # MSP CONGIG
       - CORE_PEER_LOCALMSPID=mapaMSP
-      - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/fabric/user
+      - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/fabric/msp
 
     volumes:
       - /var/run/docker.sock:/host/var/run/docker.sock
-      - ../organizations/peerOrganizations/mapa.blockfarm.com/users/Admin@mapa.blockfarm.com/msp:/etc/hyperledger/fabric/user
       - ../organizations/peerOrganizations/mapa.blockfarm.com/peers/peer0.mapa.blockfarm.com/msp:/etc/hyperledger/fabric/msp
       - ../organizations/peerOrganizations/mapa.blockfarm.com/peers/peer0.mapa.blockfarm.com/tls:/etc/hyperledger/fabric/tls
       - peer2.mapa.blockfarm.com:/var/hyperledger/production
